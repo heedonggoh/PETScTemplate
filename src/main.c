@@ -8,24 +8,25 @@ static char help[] =
  A template for PETSc by Heedong Goh <wellposed@gmail.com> \n\
 --------------------------------------------------------------------------\n";
 
-ecode GetSysInfo();
+ecode GetProcInfo();
 
 #undef __FUNCT__
 #define __FUNCT__ "main"
 int main(int argc, char **args)
 {
   ierr = PetscInitialize(&argc,&args,(char*)0,help); CHKERRQ(ierr);
-  ierr = GetSysInfo();                               CHKERRQ(ierr);
+  ierr = GetProcInfo();                              CHKERRQ(ierr);
   ierr = PetscFinalize();                            CHKERRQ(ierr);
   return 0;
 }
 
-ecode GetSysInfo()
+ecode GetProcInfo()
 {
-  ierr = MPI_Comm_size(PETSC_COMM_WORLD,&cpuSize);          CHKERRQ(ierr);
-  ierr = MPI_Comm_rank(PETSC_COMM_WORLD,&cpuRank);          CHKERRQ(ierr);
-  ierr = wprintf("\n" BLUE "pid = %ld, ppid = %ld" RESET "\n",
-		  (long)getpid(),(long)getppid());          CHKERRQ(ierr); 
-  ierr = wprintf(BLUE "cpu size = %ld" RESET "\n",cpuSize); CHKERRQ(ierr);
+  ierr = MPI_Comm_size(PETSC_COMM_WORLD,&cpuSize);               CHKERRQ(ierr);
+  ierr = MPI_Comm_rank(PETSC_COMM_WORLD,&cpuRank);               CHKERRQ(ierr);
+  ierr = wprintf("\n" BLUE "cpu size = %ld" RESET "\n",cpuSize); CHKERRQ(ierr);
+  ierr = syprintf(BLUE "cpu %d: pid = %ld, ppid = %ld" RESET "\n",
+		  cpuRank,(long)getpid(),(long)getppid());       CHKERRQ(ierr); 
+  ierr = sypflush();                                             CHKERRQ(ierr); 
   return 0;
 }
