@@ -1,10 +1,9 @@
 #!/bin/bash
 
-export PETSC_DIR=/software/petsc/petsc-3.6.3
-export PETSC_ARCH=arch-icc-opt
+PETSC_DIR=/software/petsc/petsc-3.6.3
+PETSC_ARCH=arch-icc-opt
+CPUSIZE=4
+EXE=./bin/run
 
-cd ./bin/
-
-/software/petsc/petsc-3.6.3/bin/petscmpiexec -n 4 ./run 
-
+$PETSC_DIR/bin/petscmpiexec -n $CPUSIZE $EXE
 exit $?
