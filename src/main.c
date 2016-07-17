@@ -22,10 +22,10 @@ int main(int argc, char **args)
 
 ecode GetSysInfo()
 {
-  ierr = MPI_Comm_size(PETSC_COMM_WORLD,&cpuSize);            CHKERRQ(ierr);
-  ierr = MPI_Comm_rank(PETSC_COMM_WORLD,&cpuRank);            CHKERRQ(ierr);
-  ierr = pwprintf("\n" BLUE "pid = %ld, ppid = %ld" RESET "\n",
-		  (long)getpid(),(long)getppid());            CHKERRQ(ierr); 
-  ierr = pwprintf( BLUE "cpu size = %ld" RESET "\n",cpuSize); CHKERRQ(ierr);
+  ierr = MPI_Comm_size(PETSC_COMM_WORLD,&cpuSize);          CHKERRQ(ierr);
+  ierr = MPI_Comm_rank(PETSC_COMM_WORLD,&cpuRank);          CHKERRQ(ierr);
+  ierr = wprintf("\n" BLUE "pid = %ld, ppid = %ld" RESET "\n",
+		  (long)getpid(),(long)getppid());          CHKERRQ(ierr); 
+  ierr = wprintf(BLUE "cpu size = %ld" RESET "\n",cpuSize); CHKERRQ(ierr);
   return 0;
 }
