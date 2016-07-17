@@ -4,7 +4,7 @@ A PETSc template in C
 * **Structure**
   - src : a directory contains source files
   - bin : a directory contains binaries
-  - run.sh : a bash script executes the program 
+  - run.sh : a bash script contains input parameters and executes the program 
   - Makefile : a generic makefile for PETSc
 * **Source Files**
   - main.c : main file
