@@ -9,6 +9,6 @@ A PETSc template in C
 * **Source Files**
   - main.c : main file
   - macros.h : contains common macros
-  - variables.h, variables.c : contains global variables
+  - variables.h, variables.c : contain global variables
 * **Notes**
   - Makefile and run.sh contain paths to PETSC_DIR and PETSC_ARCH.
