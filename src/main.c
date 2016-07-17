@@ -25,7 +25,7 @@ ecode GetProcInfo()
   ierr = MPI_Comm_size(PETSC_COMM_WORLD,&cpuSize);               CHKERRQ(ierr);
   ierr = MPI_Comm_rank(PETSC_COMM_WORLD,&cpuRank);               CHKERRQ(ierr);
   ierr = wprintf("\n" BLUE "cpu size = %ld" RESET "\n",cpuSize); CHKERRQ(ierr);
-  ierr = syprintf(BLUE "cpu %d: pid = %ld, ppid = %ld" RESET "\n",
+  ierr = syprintf(BLUE "cpu %d:\tpid = %ld, ppid = %ld" RESET "\n",
 		  cpuRank,(long)getpid(),(long)getppid());       CHKERRQ(ierr); 
   ierr = sypflush();                                             CHKERRQ(ierr); 
   return 0;
