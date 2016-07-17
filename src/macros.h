@@ -27,6 +27,7 @@
 
 #define wprintf(f_, ...) PetscPrintf(PETSC_COMM_WORLD,(f_),__VA_ARGS__)
 #define sprintf(f_, ...) PetscPrintf(PETSC_COMM_SELF,(f_),__VA_ARGS__)
-#define syprintf(f_, ...) PetscSynchronizedPrintf(PETSC_COMM_WORLD,(f_),__VA_ARGS__);PetscSynchronizedFlush(PETSC_COMM_WORLD,PETSC_STDOUT)
+#define syprintf(f_, ...) PetscSynchronizedPrintf(PETSC_COMM_WORLD,(f_),__VA_ARGS__)
+#define sypflush(f_) PetscSynchronizedFlush(PETSC_COMM_WORLD,PETSC_STDOUT)
 
 #endif
