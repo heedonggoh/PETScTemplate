@@ -2,15 +2,15 @@
 #########################################################################
 ## Sample input file by Heedong Goh <wellposed@gmail.com>              ##
 #########################################################################
-## PROGRAM AND ITS ARGUMENTS
+## USER PROGRAM AND ITS ARGUMENTS
 EXE=./bin/run
 CPUSIZE=20
 TITLE=test
 ARG="-title $TITLE -log_summary $TITLE.log"
-## PETSC ARGUMENTS
-PETSC_DIR=/software/petsc/petsc-3.6.3
-PETSC_ARCH=arch-icc-opt
-MPIEXE=$PETSC_DIR/bin/petscmpiexec
+## PETSC AND MPIEXE PATHS
+export PETSC_DIR=/software/petsc/petsc-3.6.3
+export PETSC_ARCH=arch-icc-opt
+export MPIEXE=$PETSC_DIR/bin/petscmpiexec
 ## DO NOT CHANGE ########################################################
 case $1 in
     nohup )
