@@ -28,8 +28,8 @@ ecode GetProcInfo()
   ierr = syprintf(BLUE "cpu %d:\tpid = %ld, ppid = %ld" RESET "\n",
 		  cpuRank,(long)getpid(),(long)getppid());              CHKERRQ(ierr); 
   ierr = sypflush();                                                    CHKERRQ(ierr); 
-  ierr = PetscOptionsGetString(NULL,"-title",title,sizeof(title),&flg); CHKERRQ(ierr); 
-  //ierr = PetscOptionsGetString(NULL,NULL,"-title",title,sizeof(title),&flg); CHKERRQ(ierr); 
+  //ierr = PetscOptionsGetString(NULL,"-title",title,sizeof(title),&flg); CHKERRQ(ierr); 
+  ierr = PetscOptionsGetString(NULL,NULL,"-title",title,sizeof(title),&flg); CHKERRQ(ierr); 
   // use the above line for petsc-3.7.2 or higher
   if(!flg) strcat(title,"noname");
   ierr = wprintf("\n" BOLD "title:\t%s" RESET "\n",title);              CHKERRQ(ierr);

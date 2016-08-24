@@ -4,12 +4,13 @@
 #########################################################################
 ## USER PROGRAM AND ITS ARGUMENTS
 EXE=./bin/run
-CPUSIZE=20
+CPUSIZE=2
 TITLE=test
-ARG="-title $TITLE -log_summary $TITLE.log"
+#ARG="-title $TITLE -log_summary $TITLE.log"
+ARG="-title $TITLE -log_view :$TITLE.log"
 ## PETSC AND MPIEXE PATHS
-export PETSC_DIR=/software/petsc/petsc-3.6.3
-export PETSC_ARCH=arch-icc-opt
+export PETSC_DIR=/opt/petsc/petsc-3.7.3
+export PETSC_ARCH=arch-gcc-opt
 export MPIEXE=$PETSC_DIR/bin/petscmpiexec
 ## DO NOT CHANGE ########################################################
 case $1 in
