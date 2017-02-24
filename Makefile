@@ -8,8 +8,8 @@ SDIR = ./src
 ## Output path
 ODIR = ./bin
 ## PETSc path
-PETSC_DIR = /opt/petsc/petsc-3.7.3
-PETSC_ARCH = arch-gcc-opt
+PETSC_DIR = /software/petsc/petsc-3.6.3
+PETSC_ARCH = arch-icc-opt
 ## Additional compile option
 CFLAGS = -Wall -Wextra -pedantic -std=c11
 ## DO NOT CHANGE ###################################################
